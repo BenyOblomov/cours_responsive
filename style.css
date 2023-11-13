@@ -2,4 +2,110 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
+
+nav {
+    padding: 20px;
+}
+
+.navbar, nav, nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    margin-left: 200px;
+    font-size: 1.3em;
+    color: black;
+}
+
+.fa-magnifying-glass {
+    padding: 20px;
+}
+
+label {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+label input {
+    appearance: none;
+}
+
+.logo_menu {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #c7c7c7;
+    border-radius: 10px;
+}
+
+.logo_menu::before {
+    content: "\f0c9";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+ label input:checked ~ .logo_menu::before {
+    content: "\f00d";
+}
+
+.navbar_mobile {
+    position: relative;
+    left: -350px;
+    overflow: hidden;
+    width: 350px;
+    height: 0;
+    background-color: rgb(193, 177, 186);
+    transition: 2s;
+
+}
+
+.navbar_mobile ul {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.navbar_mobile ul li a {
+    font-size: 1.4em;
+    color: black;
+}
+
+label input:checked ~ .navbar_mobile {
+
+    overflow: visible;
+    height: 600px;
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        display: none;
+    }
+
+    label {
+        display: block;
+    }
+}
+
+
+
+
